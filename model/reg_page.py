@@ -49,32 +49,32 @@ class RegistrationPage:
         browser.all('[id^=google_ads][id$=container__]').perform(command.js.remove)
         return self
 
-    @allure.step(f"Проверка заполнения {User.first_name}")
+    @allure.step("Проверка заполнения firstName ")
     def fill_first_name(self, value):
         browser.element('#firstName').type(value)
         return self
 
-    @allure.step(f"Проверка заполнения {User.last_name}")
+    @allure.step("Проверка заполнения lastName")
     def fill_last_name(self, value):
         browser.element('#lastName').type(value)
         return self
 
-    @allure.step(f"Проверка заполнения {User.email}")
+    @allure.step("Проверка заполнения ")
     def fill_email(self, value):
         browser.element('#userEmail').type(value)
         return self
 
-    @allure.step(f"Проверка заполнения {User.gender}")
+    @allure.step("Проверка заполнения ")
     def fill_gender(self, value):
         browser.all('[name="gender"]').element_by(have.value(value)).element('..').click()
         return self
 
-    @allure.step(f"Проверка заполнения {User.phone_number}")
+    @allure.step("Проверка заполнения ")
     def fill_user_number(self, value):
         browser.element('#userNumber').type(value)
         return self
 
-    @allure.step(f"Проверка заполнения {User.year}{User.month}{User.day}")
+    @allure.step("Проверка заполнения ")
     def fill_birthdate(self, year, month, day):
         browser.element('#dateOfBirthInput').click()
         browser.element('.react-datepicker__year-select').type(year)
@@ -82,33 +82,33 @@ class RegistrationPage:
         browser.element(f'.react-datepicker__day--0{day}:not(.react-datepicker__day--outside-month)').click()
         return self
 
-    @allure.step(f"Проверка заполнения {User.subjects}")
+    @allure.step("Проверка заполнения ")
     def fill_subjects(self, value):
         browser.element('#subjectsInput').type(value).press_enter()
         return self
 
-    @allure.step(f"Проверка заполнения {User.hobbies}")
+    @allure.step("Проверка заполнения ")
     def fill_hobbies(self, value):
         browser.all('#hobbiesWrapper label').element_by(have.exact_text(value)).element('..').perform(
             command.js.scroll_into_view).click()
         return self
 
-    @allure.step(f"Проверка заполнения {User.img}")
+    @allure.step("Проверка заполнения ")
     def fill_img(self, file):
         browser.element('#uploadPicture').send_keys(resource.path(file))
         return self
 
-    @allure.step(f"Проверка заполнения {User.address}")
+    @allure.step("Проверка заполнения ")
     def fill_current_address(self, value):
         browser.element('#currentAddress').type(value)
         return self
 
-    @allure.step(f"Проверка заполнения {User.state}")
+    @allure.step("Проверка заполнения ")
     def fill_state(self, value):
         browser.element('#react-select-3-input').set_value(value).press_enter()
         return self
 
-    @allure.step(f"Проверка заполнения {User.city}")
+    @allure.step("Проверка заполнения ")
     def fill_city(self, value):
         browser.element('#react-select-4-input').set_value(value).press_enter()
         return self
