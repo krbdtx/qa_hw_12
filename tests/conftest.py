@@ -47,8 +47,8 @@ def setup_browser(request):
     )
 
     browser.config.base_url = 'https://demoqa.com'
-    browser.config.window_width = 768
-    browser.config.window_height = 1366
+    browser.config.window_width = 1200
+    browser.config.window_height = 1400
     browser.config.driver = driver
 
     yield browser
