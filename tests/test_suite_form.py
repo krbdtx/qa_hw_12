@@ -1,3 +1,4 @@
+import allure
 from model.reg_page import registration_page
 from data.users import User
 
@@ -13,8 +14,7 @@ test_user2 = User(first_name='Aaaaaaaa', last_name='Bbbbbbb', email='asdasd@adas
                   address='City Msc Random street,City Msc Random street,City Msc Random street', state='Haryana',
                   city='Panipat')
 
-
-
+@allure.step(f"Проверка {test_user1}")
 def test_fill_form_01():
     """
     Заполнение формы PageObjects test_user1
@@ -25,6 +25,7 @@ def test_fill_form_01():
     registration_page.should_users_registration(test_user1)
 
 
+@allure.step(f"Проверка {test_user2}")
 def test_fill_form_02():
     """
     Заполнение формы PageObjects test_user2
